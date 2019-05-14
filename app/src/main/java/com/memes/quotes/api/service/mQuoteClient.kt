@@ -12,7 +12,6 @@ class mQuoteClient {
         .Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 
     private val retrofit: Retrofit by lazy {
         builder.build()
