@@ -1,6 +1,6 @@
-package com.memes.quotes.api.service
+package com.instagram.quotes.api.service
 
-import com.memes.quotes.helper.Constants.BASE_URL
+import com.instagram.quotes.helper.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory

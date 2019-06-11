@@ -1,4 +1,4 @@
-package com.memes.quotes.helper
+package com.instagram.quotes.helper
 
 object Constants {
 

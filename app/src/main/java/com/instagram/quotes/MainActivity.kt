@@ -1,11 +1,12 @@
-package com.memes.quotes
+package com.instagram.quotes
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.memes.quotes.fragments.FeedFragment
-import com.memes.quotes.fragments.SavedFragment
+import com.instagram.quotes.fragments.FeedFragment
+import com.instagram.quotes.fragments.SavedFragment
+import com.memes.quotes.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_saved -> {
-                fm.beginTransaction().hide(active).detach(fragmentSaved).attach(fragmentSaved).show(fragmentSaved).commit()
+                fm.beginTransaction().hide(active).detach(fragmentSaved).attach(fragmentSaved).show(fragmentSaved)
+                    .commit()
                 active = fragmentSaved
 
                 return@OnNavigationItemSelectedListener true

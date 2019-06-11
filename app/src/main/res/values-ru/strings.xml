@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Quotes</string>
     <string name="title_home">Home</string>
-    <string name="saved">Saved</string>
-    <string name="feed">Feed</string>
+    <string name="saved">Закладки</string>
+    <string name="feed">Лента</string>
 
     <string name="facebook_app_id">2462194350732226</string>
 

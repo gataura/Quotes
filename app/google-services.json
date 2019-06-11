@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "856819336039",
+    "firebase_url": "https://quotes-d92dd.firebaseio.com",
+    "project_id": "quotes-d92dd",
+    "storage_bucket": "quotes-d92dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856819336039:android:992db76413425b26",
+        "android_client_info": {
+          "package_name": "com.instagram.quotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856819336039-uo55qo38pnom6u2k3gnk3emsukpppfks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSZ7_IMLKBvH1gviJ6kxmC89QG0MBDGa8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856819336039-uo55qo38pnom6u2k3gnk3emsukpppfks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

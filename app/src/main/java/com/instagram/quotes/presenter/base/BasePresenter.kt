@@ -1,4 +1,4 @@
-package com.memes.quotes.presenter.base
+package com.instagram.quotes.presenter.base
 
 abstract class BasePresenter<T: BaseView> {
 

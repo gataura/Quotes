@@ -1,6 +1,6 @@
-package com.memes.quotes.api.service
+package com.instagram.quotes.api.service
 
-import com.memes.quotes.api.model.Quote
+import com.instagram.quotes.api.model.Quote
 import io.reactivex.Flowable
 import retrofit2.Call
 import retrofit2.http.GET

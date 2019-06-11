@@ -1,0 +1,101 @@
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/saved_quote_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardElevation="4dp"
+        android:layout_margin="8dp" app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:focusable="true"
+                android:tag="not saved"
+                android:clickable="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp" app:srcCompat="@drawable/save_icon_outline_24"
+                android:id="@+id/saved_save_icon" android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                app:layout_constraintHorizontal_bias="0.976"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/saved_author_text_view"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <ImageView
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp" app:srcCompat="@drawable/share_icon"
+                android:id="@+id/saved_share_icon"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintHorizontal_bias="0.979" app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/saved_author_text_view"
+                app:layout_constraintEnd_toStartOf="@+id/saved_save_icon"/>
+        <TextView
+                android:focusable="true"
+                android:clickable="true"
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/saved_likes_count"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/saved_author_text_view"
+                app:layout_constraintVertical_bias="1.0" android:textSize="24sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintHorizontal_bias="0.0" android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/saved_like_icon" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"/>
+        <ImageView
+                android:tag="not liked"
+                android:layout_width="30dp"
+                android:layout_height="30dp" app:srcCompat="@drawable/like_outline"
+                android:id="@+id/saved_like_icon"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/saved_quote_text_view"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.023"
+                app:layout_constraintVertical_bias="1.0" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp" android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/saved_quote_text_view" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+                app:layout_constraintHorizontal_bias="0.025" app:layout_constraintVertical_bias="0.012"
+                android:textSize="18sp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/saved_author_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/saved_quote_text_view"
+                app:layout_constraintBottom_toTopOf="@+id/saved_like_icon" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" android:layout_marginBottom="24dp"
+                app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="1.0"
+                android:layout_marginTop="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
