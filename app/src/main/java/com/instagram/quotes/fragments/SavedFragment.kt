@@ -48,6 +48,7 @@ class SavedFragment : Fragment(), QuotesView {
     lateinit var myRef: DatabaseReference
     lateinit var database: FirebaseDatabase
     var dbValue: Long = 0
+    var adCounter: Long = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,6 +67,7 @@ class SavedFragment : Fragment(), QuotesView {
 
             override fun onDataChange(p0: DataSnapshot) {
                 dbValue = p0.child("openAd").value as Long
+                adCounter = p0.child("adCounter").value as Long
             }
 
         })
@@ -118,6 +120,10 @@ class SavedFragment : Fragment(), QuotesView {
 
     override fun getOpenAd(): Int {
         return dbValue.toInt()
+    }
+
+    override fun getAdCounter(): Int {
+        return adCounter.toInt()
     }
 
     override fun setQuote(quote: Quote) {

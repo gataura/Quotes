@@ -12,4 +12,5 @@ interface QuotesView: BaseView {
     fun startIntent(sharingIntent: Intent)
     fun getAd(): InterstitialAd
     fun getOpenAd(): Int
+    fun getAdCounter(): Int
 }

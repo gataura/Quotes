@@ -47,6 +47,7 @@ class FeedFragment : Fragment(), QuotesView {
     lateinit var myRef: DatabaseReference
     lateinit var database: FirebaseDatabase
     var dbValue: Long = 0
+    var adCounter: Long = 0
 
     var isFirstLoad = true
 
@@ -73,6 +74,7 @@ class FeedFragment : Fragment(), QuotesView {
 
             override fun onDataChange(p0: DataSnapshot) {
                 dbValue = p0.child("openAd").value as Long
+                adCounter = p0.child("adCounter").value as Long
             }
 
         })
@@ -157,6 +159,10 @@ class FeedFragment : Fragment(), QuotesView {
 
     override fun getOpenAd(): Int {
         return dbValue.toInt()
+    }
+
+    override fun getAdCounter(): Int {
+        return adCounter.toInt()
     }
 
     override fun onLoad() {

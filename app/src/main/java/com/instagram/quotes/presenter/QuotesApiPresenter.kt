@@ -246,7 +246,7 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
         counter++
         if (counter % view!!.getOpenAd() == 0) {
             if (view?.getAd()!!.isLoaded) {
-                if (adCounter != 5) {
+                if (adCounter != view!!.getAdCounter()) {
                     view?.getAd()?.show()
                     adCounter++
                 }
