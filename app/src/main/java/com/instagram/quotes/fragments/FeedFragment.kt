@@ -79,10 +79,9 @@ class FeedFragment : Fragment(), QuotesView {
 
         })
 
-        MobileAds.initialize(this.requireContext(), "ca-app-pub-3940256099942544~3347511713")
 
         mInterstitialAd = InterstitialAd(this.requireContext())
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-9561253976720525/7301847397"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         mInterstitialAd.adListener = object: AdListener() {
