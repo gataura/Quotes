@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.database.*
 import com.memes.quotes.R
 import com.instagram.quotes.api.model.Quote
@@ -46,6 +47,7 @@ class FeedFragment : Fragment(), QuotesView {
 
     lateinit var myRef: DatabaseReference
     lateinit var database: FirebaseDatabase
+    lateinit var firebaseAnalytics: FirebaseAnalytics
     var dbValue: Long = 0
     var adCounter: Long = 0
 
@@ -80,6 +82,7 @@ class FeedFragment : Fragment(), QuotesView {
         })
 
 
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this.requireContext())
         mInterstitialAd = InterstitialAd(this.requireContext())
         mInterstitialAd.adUnitId = "ca-app-pub-9561253976720525/7301847397"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
@@ -91,10 +94,10 @@ class FeedFragment : Fragment(), QuotesView {
             }
 
             override fun onAdLoaded() {
-                if (isFirstLoad) {
-                    mInterstitialAd.show()
-                    isFirstLoad = false
-                }
+//                if (isFirstLoad) {
+//                    mInterstitialAd.show()
+//                    isFirstLoad = false
+//                }
             }
 
         }
@@ -166,6 +169,10 @@ class FeedFragment : Fragment(), QuotesView {
 
     override fun onLoad() {
 
+    }
+
+    override fun getFirebaseAn(): FirebaseAnalytics {
+        return firebaseAnalytics
     }
 
     override fun startIntent(sharingIntent: Intent) {

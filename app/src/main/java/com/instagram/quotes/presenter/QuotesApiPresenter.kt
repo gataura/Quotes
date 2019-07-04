@@ -2,6 +2,7 @@ package com.instagram.quotes.presenter
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
@@ -92,6 +93,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
             saveToDb(quoteList[adapterPosition], view?.getDb() as AppDatabase)
         }
 
+        val bundle = Bundle()
+        bundle.putString("saveClick", "saveClick")
+        view?.getFirebaseAn()?.logEvent("saveClick", bundle)
+
         counterAd()
     }
 
@@ -102,6 +107,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
         sharingIntent.putExtra(Intent.EXTRA_TEXT, quote.getQuoteText())
         view?.startIntent(sharingIntent)
 
+        val bundle = Bundle()
+        bundle.putString("shareClick", "shareClick")
+        view?.getFirebaseAn()?.logEvent("shareClick", bundle)
+
         counterAd()
     }
 
@@ -111,6 +120,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Look at this, i found it in Quote app: ")
         sharingIntent.putExtra(Intent.EXTRA_TEXT, quoteList[adapterPosition].getQuoteText())
         view?.startIntent(sharingIntent)
+
+        val bundle = Bundle()
+        bundle.putString("shareClick", "shareClick")
+        view?.getFirebaseAn()?.logEvent("shareClick", bundle)
 
         counterAd()
     }
@@ -125,6 +138,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
             img.tag = "saved"
             saveToDb(view?.getDb() as AppDatabase)
         }
+
+        val bundle = Bundle()
+        bundle.putString("saveClick", "saveClick")
+        view?.getFirebaseAn()?.logEvent("saveClick", bundle)
 
         counterAd()
     }
@@ -144,6 +161,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
             likesCount.text = quote.getLikes().toString()
         }
 
+        val bundle = Bundle()
+        bundle.putString("likeClick", "likeClick")
+        view?.getFirebaseAn()?.logEvent("likeClick", bundle)
+
         counterAd()
     }
 
@@ -161,6 +182,10 @@ class QuotesApiPresenter: BasePresenter<QuotesView>(), IQuotesPresenter {
             quoteList[adapterPosition].setLikes(quoteList[adapterPosition].getLikes() + 1)
             likesCount.text = quoteList[adapterPosition].getLikes().toString()
         }
+
+        val bundle = Bundle()
+        bundle.putString("likeClick", "likeClick")
+        view?.getFirebaseAn()?.logEvent("likeClick", bundle)
 
         counterAd()
     }

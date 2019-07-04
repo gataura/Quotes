@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.database.*
 import com.memes.quotes.R
 import com.instagram.quotes.adapter.SavedAdapter
@@ -47,6 +48,7 @@ class SavedFragment : Fragment(), QuotesView {
 
     lateinit var myRef: DatabaseReference
     lateinit var database: FirebaseDatabase
+    lateinit var firebaseAnalytics: FirebaseAnalytics
     var dbValue: Long = 0
     var adCounter: Long = 0
 
@@ -75,6 +77,7 @@ class SavedFragment : Fragment(), QuotesView {
         db = AppDatabase.getInstance(this.requireContext()) as AppDatabase
 
 
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this.requireContext())
         mInterstitialAd = InterstitialAd(this.requireContext())
         mInterstitialAd.adUnitId = "ca-app-pub-9561253976720525/7301847397"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
@@ -127,6 +130,10 @@ class SavedFragment : Fragment(), QuotesView {
 
     override fun setQuote(quote: Quote) {
 
+    }
+
+    override fun getFirebaseAn(): FirebaseAnalytics {
+        return firebaseAnalytics
     }
 
     override fun onLoad() {
